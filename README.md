@@ -8,5 +8,5 @@ Authors:
 - Nathan Knauf
 - Sambhav Mattoo
 
-
-
+### Motivation and Approach
+![Motivation](moticvation.png)
