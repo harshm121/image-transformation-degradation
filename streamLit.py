@@ -61,9 +61,12 @@ img = Image.open(image_path).convert('RGB')
 img_processed = preprocessing(img).unsqueeze(dim = 0)
 out = softmax(model(img_processed)).detach().numpy()[0]
 probClass = out[groundTruthClass]
-
+if(probClass<0.001):
+    probClass = "{:.3e}".format(probClass)
+else:
+    probClass = "{:.4f}".format(probClass)
 st.image(img, caption='Original Image', width = 300)
-st.markdown("{}'s Probability of {} = {}".format(modelName, imageNetClass, str(probClass)))
+st.markdown("{}'s Probability of {} = {}".format(modelName, imageNetClass, probClass))
 
 imageT_path = os.path.join(os.path.join("./streamLitHelp/images", transformationToFolder[transformation]), imgName)
 
@@ -74,5 +77,9 @@ outT = softmax(model(imgT_processed)).detach().numpy()[0]
 probTClass = outT[groundTruthClass]
 
 st.image(imgT, caption='Transformed Image', width = 300)
-st.markdown("{}'s Probability of transformed {} = {}".format(modelName, imageNetClass, str(probTClass)))
+if(probTClass<0.001):
+    probTClass = "{:.3e}".format(probTClass)
+else:
+    probTClass = "{:.4f}".format(probTClass)
+st.markdown("{}'s Probability of transformed {} = {}".format(modelName, imageNetClass, probTClass))
                           
