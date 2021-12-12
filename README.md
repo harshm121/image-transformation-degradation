@@ -17,7 +17,7 @@ Authors:
 - Demo presentation available [here](https://docs.google.com/presentation/d/1lzLFLml6BPpKaAfFm7agZZTHjOm0mszrQOafaNMbdHI/edit?usp=sharing)
 
 ### Code
-run ```streamlit run streamLit.py``` for running the web app
-transform.ipynb - transforms the images
-colab_transformed_evaluation.ipynb - Notebook for running evaluation on transformed images
-ensembling.ipynb - evaluates ensemble
+- run ```streamlit run streamLit.py``` for running the web app
+- transform.ipynb - transforms the images
+- colab_transformed_evaluation.ipynb - Notebook for running evaluation on transformed images
+- ensembling.ipynb - evaluates ensemble
